@@ -2,19 +2,48 @@
 <img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
 </div>
 
-# Run and deploy your AI Studio app
+# React Landing Page 
 
-This contains everything you need to run your app locally.
+This repository contains the source code for a polished React-based landing page, originally generated via AI Studio.
 
-View your app in AI Studio: https://ai.studio/apps/24499647-926f-41bd-bf1b-595245c9fb13
+## 🚀 Getting Started
 
-## Run Locally
+### Prerequisites
+- Node.js (v20+ recommended)
 
-**Prerequisites:**  Node.js
+### Local Development
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+2. **Environment Variables:**
+   Copy `.env.example` to `.env.local` (or just `.env`) and provide your API keys if needed (e.g., `GEMINI_API_KEY`).
+   ```bash
+   cp .env.example .env
+   ```
+3. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
+   This will start Vite and output the local URL (usually `http://localhost:3000`).
 
+## 🛠️ Build and Deploy
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### Local Build
+Ensure everything compiles properly before pushing changes:
+```bash
+npm run build
+npm run preview
+```
+
+### GitHub Actions Deployment
+This project is configured with a GitHub Actions workflow (`.github/workflows/deploy.yml`) that automatically deploys the `main` branch to **GitHub Pages**.
+
+To enable this:
+1. Go to your repository **Settings** > **Pages**.
+2. Under "Build and deployment", change the **Source** to **GitHub Actions**.
+3. Push changes to the `main` branch, and the workflow will securely build and publish your project without pushing any messy `.gitignore` artifacts.
+
+## 🔒 Security & Best Practices
+- **Strict `.gitignore`**: Implemented an extensive `.gitignore` so sensitive files (like `.env`), cache/logs (`npm-debug.log`, `node_modules/`), and editor configuration folders (`.idea`, `.vscode/`) are intentionally excluded.
+- **Dependencies verification**: Ensured `package.json` installs are reliable and the startup workflow is properly configured.
